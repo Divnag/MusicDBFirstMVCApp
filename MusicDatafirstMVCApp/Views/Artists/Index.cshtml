@@ -1,39 +1,41 @@
-﻿@model IEnumerable<MusicDatafirstMVCApp.Models.Artist>
+﻿<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/artistindex.css" rel="stylesheet" />
+@model IEnumerable<MusicDatafirstMVCApp.Models.Artist>
 
 @{
-    ViewBag.Title = "Index";
-}
+                /**/
 
-<h2>Index</h2>
+                ViewBag.Title = "Index";
+}
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+   <a class="btn btn-default" href=" @Url.Action("Create", "Artists")">Create New</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    @foreach (var item in Model)
+    {
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArtistID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistID })
-        </td>
-    </tr>
-}
+        <div class="col-md-4">
+            <div class=" thumbnail">
+                <div class="caption">
 
-</table>
+                    <p>
+                        @Html.DisplayNameFor(model => model.ArtistName): @Html.DisplayFor(modelItem => item.ArtistName)
+                    </p>
+                    <p>
+                        <img src="@Html.DisplayFor(modelItem => item.Photo)" height="100" width="100" />
+                    </p>
+                    <p>
+                        <a class="btn btn-default" href="@Url.Action( "Edit", new { id = item.ArtistID }) ">Edit</a>
+                        @*<a class="btn btn-default" href=" @Url.Action("Details", new { id = item.ArtistID }) ">Details</a>*@
+                        <a class="btn btn-default" href=" @Url.Action( "Delete", new { id = item.ArtistID })">Delete</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    }
+</div>
+
+       

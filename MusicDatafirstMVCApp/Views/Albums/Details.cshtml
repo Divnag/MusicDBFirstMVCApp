@@ -1,66 +1,40 @@
-﻿@model MusicDatafirstMVCApp.Models.Album
+﻿<link href="~/Content/artistindex.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+@model MusicDatafirstMVCApp.Models.Album
+
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Album</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumName)
-        </dd>
+<div class="row">
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <div class="caption">
+        
+        <p>
+            @Html.DisplayNameFor(model => model.AlbumName):@Html.DisplayFor(model => model.AlbumName)
+        </p>
+        <p><img src="@Html.DisplayFor(model => model.Photo)" height="100" width="100" /></p>
+        <p>@Html.DisplayNameFor(model => model.ReleaseDate):@Html.DisplayFor(model => model.ReleaseDate)</p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
+        <p>@Html.DisplayNameFor(model => model.Label): @Html.DisplayFor(model => model.Label)</p>
+        <p>@Html.DisplayNameFor(model => model.WonGrammy):@Html.DisplayFor(model => model.WonGrammy)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
+        <p> @Html.DisplayNameFor(model => model.Artist.ArtistName): @Html.DisplayFor(model => model.Artist.ArtistName)</p>
+        <p>
+            <img src="@Html.DisplayFor(model=> model.Artist.Photo)" height="100" width="100" />
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WonGrammy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WonGrammy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Artist.ArtistName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Artist.ArtistName)
-        </dd>
-
-    </dl>
+        <p>
+           <a class="btn btn-default"href="@Url.Action( "Edit", new { id = Model.AlbumID }) ">Edit</a>
+            <a class="btn btn-default"href="@Url.Action("Index","Albums")">Go back</a>
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
+</div>

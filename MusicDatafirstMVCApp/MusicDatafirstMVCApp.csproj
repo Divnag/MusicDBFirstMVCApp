@@ -179,10 +179,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\artistindex.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\homeindex.css" />
+    <Content Include="Content\images\1img.jpg" />
+    <Content Include="Content\images\2IMG.png" />
+    <Content Include="Content\images\3img.jpg" />
+    <Content Include="Content\images\4img.jpg" />
+    <Content Include="Content\images\5img.jpg" />
+    <Content Include="Content\images\6img.png" />
+    <Content Include="Content\images\pexels-photo-145707.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -15,9 +15,10 @@ namespace MusicDatafirstMVCApp.Models
 
     public partial class Album
     {
-        [Display (Name ="Album")]
+        [Display(Name = "Album")]
         public int AlbumID { get; set; }
         public string AlbumName { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}") ]
         public System.DateTime ReleaseDate { get; set; }
         public string Label { get; set; }
         public bool WonGrammy { get; set; }

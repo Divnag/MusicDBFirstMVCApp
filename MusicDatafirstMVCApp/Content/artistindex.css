@@ -1,0 +1,13 @@
+﻿body {
+    background-color:black;
+}
+.caption{
+   background-color:crimson !important;
+}
+.navbar-inverse {
+    background-color: transparent !important;
+    border: none !important;
+}
+.btn-default{
+    background-color:greenyellow;
+}

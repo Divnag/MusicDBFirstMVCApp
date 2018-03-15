@@ -1,0 +1,23 @@
+﻿.navbar-inverse {
+    background-color: transparent !important;
+    border: none !important;
+}
+.jumbotron{
+    background-color:blue;
+    text-align:center;
+}
+
+.jumbotron.one {
+    background:none;
+    text-align: center;
+}
+.row.bg {
+    background-image: url('/Content/images/pexels-photo-145707.jpeg');
+   
+    background-size: contain;
+    height: 300px;
+}
+body{
+background-color:black;
+ }
+
